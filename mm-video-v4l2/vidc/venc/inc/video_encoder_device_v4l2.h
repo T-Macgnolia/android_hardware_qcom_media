@@ -393,8 +393,6 @@ class venc_dev
         bool venc_set_searchrange();
         bool venc_set_vpx_error_resilience(OMX_BOOL enable);
         bool venc_set_perf_mode(OMX_U32 mode);
-	bool venc_set_session_priority(OMX_U32 priority);
-	bool venc_set_operatingrate(OMX_U32 rate);
 
 #ifdef MAX_RES_1080P
         OMX_U32 pmem_free();

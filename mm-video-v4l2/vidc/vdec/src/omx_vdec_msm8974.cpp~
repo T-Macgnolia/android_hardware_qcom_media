@@ -2044,6 +2044,9 @@ OMX_ERRORTYPE omx_vdec::component_init(OMX_STRING role)
         DEBUG_PRINT_INFO("omx_vdec::component_init() success : fd=%d",
                 drv_ctx.video_driver_fd);
     }
+    //memset(&h264_mv_buff,0,sizeof(struct h264_mv_buffer));
+    control.id = V4L2_CID_MPEG_VIDC_VIDEO_PRIORITY;
+    control.value = V4L2_MPEG_VIDC_VIDEO_PRIORITY_REALTIME_DISABLE;
 
     if (ioctl(drv_ctx.video_driver_fd, VIDIOC_S_CTRL, &control)) {
         DEBUG_PRINT_ERROR("Failed to set Default Priority");
